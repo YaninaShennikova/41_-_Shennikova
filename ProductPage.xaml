@@ -1,0 +1,111 @@
+﻿<Page x:Class="_41_размер_Shennikova.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_41_размер_Shennikova"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductPage" FontFamily="Comic Sans MS">
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <WrapPanel Grid.Column="0" Margin="5" Orientation="Vertical">
+            <TextBlock Name="Imya" FontSize="15"></TextBlock>
+            <TextBlock Name="Role" FontSize="15"></TextBlock>
+            <TextBlock Name="AllRecords" FontSize="15"></TextBlock>
+        </WrapPanel>
+
+
+
+        <WrapPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right"/>
+
+        <StackPanel Grid.Row="1" Margin="10,9,0,10" Orientation="Vertical" HorizontalAlignment="Left" Width="202" RenderTransformOrigin="0.497,0.681">
+            <TextBlock Text="Поиск по наименованию" TextAlignment="Right"  FontSize="16" Width="202"></TextBlock>
+            <TextBox x:Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="170" FontSize="16" RenderTransformOrigin="1.027,0.565" Height="20"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Right">
+            <TextBlock Name="Count" FontSize="15"></TextBlock>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="226,15,0,0" HorizontalAlignment="Left" Width="234" RenderTransformOrigin="0.792,0.315">
+            <RadioButton Content="По возрастанию стоимости" GroupName="Sort" Width="237" FontSize="16" Checked="RButtonUp_Checked" x:Name="RButtonUp"/>
+            <RadioButton Content="По убыванию стоимости" GroupName="Sort" Width="237" FontSize="16" Checked="RButtonDown_Checked" x:Name="RButtonDown"/>
+        </StackPanel>
+
+        <ListView Name="ProductListView" Grid.Row="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="170"></ColumnDefinition>
+                            <ColumnDefinition Width="900"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+
+                        </Grid.RowDefinitions>
+                        <Image Width="150" Grid.Column="0" Grid.RowSpan="3" Stretch="UniformToFill" HorizontalAlignment="Center" >
+                            <Image.Source>
+                                <Binding Path="ProductPhotoPath">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>
+                                            Товар_import/picture.png
+                                        </ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" FontSize="20" ></TextBlock>
+                        <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" FontSize="20" ></TextBlock>
+
+                        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <TextBlock Text="Производитель: " FontSize="20" ></TextBlock>
+                            <TextBlock Text="{Binding ProductManufacturer}" FontSize="20" ></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <TextBlock Text="Цена: " FontSize="20" ></TextBlock>
+                            <TextBlock Text="{Binding CostInt}" FontSize="20" ></TextBlock>
+                            <TextBlock Text=" рублей" FontSize="20" ></TextBlock>
+
+                        </StackPanel>
+                        <TextBlock Text="Скидка" FontSize="20" Grid.Column="2" Grid.Row="0"></TextBlock>
+
+                        <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <TextBlock Text="{Binding ProductDiscountAmount}" FontSize="30" ></TextBlock>
+                            <TextBlock Text="%" FontSize="30"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel  Orientation="Vertical" Margin="460,4,134,0" Grid.Row="1">
+            <TextBlock Text="Фильтрация по скидке " HorizontalAlignment="Center" TextAlignment="Right" Width="187" FontSize="16" RenderTransformOrigin="0.432,0.871"/>
+            <ComboBox x:Name ="ComboType" SelectionChanged="ComboType_SelectionChanged" Margin ="5" FontSize="13" Width="166">
+                <TextBlock><Run Text="Все"/></TextBlock>
+                <TextBlock><Run Text="от 0 до 9,99%"/></TextBlock>
+                <TextBlock><Run Text="от 10 до 14,99%"/></TextBlock>
+                <TextBlock><Run Text="от 15 до 100%"/></TextBlock>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>
