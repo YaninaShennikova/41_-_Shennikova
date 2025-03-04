@@ -96,7 +96,7 @@ namespace _41_размер_Shennikova
             ButtonLоgin.IsEnabled = true;
         }
         private void ResetAuthForm()
-        {
+        {      
             Login.Clear();
             Password.Clear();
             CaptchaInput.Clear();
