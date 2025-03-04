@@ -19,19 +19,27 @@
         </Grid.RowDefinitions>
 
 
-        <WrapPanel Grid.Column="0" Margin="5" Orientation="Vertical">
-            <TextBlock Name="Imya" FontSize="15"></TextBlock>
-            <TextBlock Name="Role" FontSize="15"></TextBlock>
-            <TextBlock Name="AllRecords" FontSize="15"></TextBlock>
-        </WrapPanel>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal">
+            <TextBlock Text="Вы авторизированы как: " FontSize="16"></TextBlock>
+            <TextBlock Name="Imya" FontSize="16"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+            <TextBlock Text="Роль: " FontSize="16"></TextBlock>
+            <TextBlock Name="Role" FontSize="16"></TextBlock>
+        </StackPanel>
+
+
+
 
 
 
         <WrapPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right"/>
 
-        <StackPanel Grid.Row="1" Margin="10,9,0,10" Orientation="Vertical" HorizontalAlignment="Left" Width="202" RenderTransformOrigin="0.497,0.681">
-            <TextBlock Text="Поиск по наименованию" TextAlignment="Right"  FontSize="16" Width="202"></TextBlock>
-            <TextBox x:Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="170" FontSize="16" RenderTransformOrigin="1.027,0.565" Height="20"/>
+        <StackPanel Grid.Row="1" Margin="0,31,0,5" Orientation="Vertical" HorizontalAlignment="Left" Width="199" RenderTransformOrigin="0.497,0.681">
+            <TextBlock Text="Поиск по наименованию" TextAlignment="Right"  FontSize="16" Width="197" Height="24"/>
+            <TextBox x:Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="190" FontSize="16" RenderTransformOrigin="1.027,0.565" Height="22"/>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Right">
@@ -39,7 +47,7 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="226,15,0,0" HorizontalAlignment="Left" Width="234" RenderTransformOrigin="0.792,0.315">
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="221,35,0,0" HorizontalAlignment="Left" Width="234" RenderTransformOrigin="0.792,0.315">
             <RadioButton Content="По возрастанию стоимости" GroupName="Sort" Width="237" FontSize="16" Checked="RButtonUp_Checked" x:Name="RButtonUp"/>
             <RadioButton Content="По убыванию стоимости" GroupName="Sort" Width="237" FontSize="16" Checked="RButtonDown_Checked" x:Name="RButtonDown"/>
         </StackPanel>
@@ -98,9 +106,9 @@
 
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel  Orientation="Vertical" Margin="460,4,134,0" Grid.Row="1">
+        <StackPanel  Orientation="Vertical" Margin="460,29,134,3" Grid.Row="1">
             <TextBlock Text="Фильтрация по скидке " HorizontalAlignment="Center" TextAlignment="Right" Width="187" FontSize="16" RenderTransformOrigin="0.432,0.871"/>
-            <ComboBox x:Name ="ComboType" SelectionChanged="ComboType_SelectionChanged" Margin ="5" FontSize="13" Width="166">
+            <ComboBox x:Name ="ComboType" SelectionChanged="ComboType_SelectionChanged" Margin ="5" FontSize="13" Width="166" Height="20">
                 <TextBlock><Run Text="Все"/></TextBlock>
                 <TextBlock><Run Text="от 0 до 9,99%"/></TextBlock>
                 <TextBlock><Run Text="от 10 до 14,99%"/></TextBlock>

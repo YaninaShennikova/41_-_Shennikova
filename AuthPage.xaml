@@ -10,39 +10,39 @@
 
     <Grid>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" ></RowDefinition>
-                <RowDefinition Height="auto" ></RowDefinition>
-                <RowDefinition Height="auto" ></RowDefinition>
-                <RowDefinition Height="auto" ></RowDefinition>
-                <RowDefinition Height="auto" ></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" ></ColumnDefinition>
-                <ColumnDefinition Width="Auto"  ></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+            <ColumnDefinition Width="Auto"  ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Логин" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"></TextBlock>
-            <TextBlock Text="Пароль" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"></TextBlock>
+        <TextBlock Text="Логин"  FontSize="20" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,39,348,0"></TextBlock>
+        <TextBlock Text="Пароль"   FontSize="20" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,83,348,0"></TextBlock>
 
-            <StackPanel Name="CaptchaPanel" Orientation="Vertical" Grid.Row="3" Grid.Column="1" Visibility="Collapsed">
-                <TextBlock Text="Введите капчу:" FontWeight="Bold" Margin="5"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="captchaOne" FontSize="22" TextDecorations="Strikethrough"/>
-                    <TextBlock Name="captchaTwo" FontSize="22" TextDecorations="Strikethrough" Margin="5,10,0,0"/>
-                    <TextBlock Name="captchaThree" FontSize="22" TextDecorations="Strikethrough"/>
-                    <TextBlock Name="captchaFour" FontSize="22" TextDecorations="Strikethrough" Margin="5,10,0,0"/>
-                </StackPanel>
-                <TextBox Name="CaptchaInput" Width="100" HorizontalAlignment="Center" Margin="10"/>
+        <StackPanel Name="CaptchaPanel" Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Visibility="Collapsed">
+            <TextBlock Text="Введите капчу:" FontWeight="Bold" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="captchaOne" FontSize="22" TextDecorations="Strikethrough"/>  
+                <TextBlock Name="captchaTwo" FontSize="22" TextDecorations="Strikethrough" Margin="5,10,0,0"/>
+                <TextBlock Name="captchaThree" FontSize="22" TextDecorations="Strikethrough"/>
+                <TextBlock Name="captchaFour" FontSize="22" TextDecorations="Strikethrough" Margin="5,10,0,0"/>
             </StackPanel>
+            <TextBox Name="CaptchaInput" Width="100" HorizontalAlignment="Center" Margin="10"/>
+        </StackPanel>
 
 
-            <TextBox Text="loginDH3fjd"  Name="Login" Grid.Row="0"  Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="10"></TextBox>
-            <TextBox Text="U2hhd1" Name="Password" Grid.Row="1" Grid.Column="2"  Width="200" HorizontalAlignment="Left" Margin="10"></TextBox>
+        <TextBox Text="loginDEevd2018"  Name="Login" Grid.Row="4"  Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="322,39,0,42"></TextBox>
+        <TextBox Text="GMbcZN" Name="Password" Grid.Row="4" Grid.Column="1"  Width="200" HorizontalAlignment="Left" Margin="322,83,0,-6"></TextBox>
 
-            <Button Name="ButtonLоgin" Content="Войти" Click="ButtonLоgin_Click"  Grid.Column="1" Grid.Row="4" Margin="10" HorizontalAlignment="Center"></Button>
-            <Button Name="Gost" Content="Войти как гость" Click="Gost_Click" Grid.Column="0" Grid.Row="4"  Margin="10" HorizontalAlignment="Center" ></Button>
+        <Button Name="ButtonLоgin" Content="Войти" Click="ButtonLоgin_Click"  Grid.Column="1" Grid.Row="4" Margin="468,161,0,-81" HorizontalAlignment="Left"></Button>
+        <Button Name="Gost" Content="Войти как гость" Click="Gost_Click" Grid.Column="1" Grid.Row="4"  Margin="120,161,0,-81" HorizontalAlignment="Left" />
 
-      
+
     </Grid>
 </Page>
